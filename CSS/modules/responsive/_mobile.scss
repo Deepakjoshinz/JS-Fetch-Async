@@ -1,0 +1,81 @@
+html,
+body {
+  //Image used
+  background-image: url("../imgs/background.jpg");
+
+  //Full height
+  height: fit-content;
+
+  //Create the parallax scrolling effect
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  //Define the font for the whole webpage
+  font-family: $myFont;
+}
+#hero-section {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  #banner {
+    width: 30%;
+  }
+}
+
+.glassmorphisim {
+  @include background-effect;
+}
+
+.glassmorphisim-box {
+  @include background-effect;
+  @include border-styles;
+  display: grid;
+  grid-template-areas: ("img" "pokemonName" "category");
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.506);
+  color: $primary-font;
+  font-size: $large;
+  text-transform: uppercase;
+  a {
+    grid-area: category;
+    font-size: $small;
+
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+    margin: 20px 0 20px 0;
+    @include border-styles;
+  }
+  p {
+    grid-area: pokemonName;
+  }
+  img {
+    grid-area: img;
+    width: 200px;
+  }
+}
+
+#pokeList {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 15px;
+  padding: 30px 50px;
+}
+
+#filters-and-search {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+
+  #search {
+    @include border-styles;
+    padding: 10px 40px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $myFont;
+  }
+}

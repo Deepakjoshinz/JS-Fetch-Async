@@ -1,0 +1,15 @@
+@mixin background-effect {
+  height: fit-content;
+  background: rgba(39, 39, 39, 0.1);
+  backdrop-filter: blur(10px);
+  //fall back for old web browsers
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.3);
+}
+
+@mixin border-styles {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.443);
+}

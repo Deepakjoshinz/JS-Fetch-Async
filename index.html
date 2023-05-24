@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- This creates a external container that has a glassmorphism and parralax effect for the content to sit in -->
+    <container id="page-effect">
+      <!-- This is the hero section of the one page site, includes the banner and more informaiton -->
+      <section id="hero-section">
+        <img id="banner" src="imgs/banner-pokemon.png" />
+      </section>
+      <!-- This is the search and filters container, all of the serach and filter information is kept here -->
+      <section id="filters-and-search">
+        <input id="search" type="search" placeholder="Search Pokemon" />
+        <label for="name">Filter Results:</label>
+        <select name="filter" id="filter">
+          <option value="" selected disabled hidden>
+            Select a Filter Option
+          </option>
+          <option value="az">Alphabetical A to Z</option>
+          <option value="za">Alphabetical Z to A</option>
+        </select>
+      </section>
+      <!-- This is where the array gets rendered to from the script.js, the renderArray function uses the informtion from the objectes in the array to create elements inside the div -->
+      <section id="pokemon-list">
+        <div id="pokeList"></div>
+      </section>
+    </container>
+    <!-- This links back to the script.js -->
+    <script src="JS/script.js"></script>
+  </body>
+</html>
