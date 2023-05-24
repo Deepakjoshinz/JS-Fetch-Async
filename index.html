@@ -17,7 +17,6 @@
       <!-- This is the search and filters container, all of the serach and filter information is kept here -->
       <section id="filters-and-search">
         <input id="search" type="search" placeholder="Search Pokemon" />
-        <label for="name">Filter Results:</label>
         <select name="filter" id="filter">
           <option value="" selected disabled hidden>
             Select a Filter Option
@@ -25,6 +24,70 @@
           <option value="az">Alphabetical A to Z</option>
           <option value="za">Alphabetical Z to A</option>
         </select>
+        <div>
+          <input type="radio" id="water" name="category" value="water" />
+          <label for="water">Water</label>
+        </div>
+        <div>
+          <input type="radio" id="fire" name="category" value="fire" />
+          <label for="fire">Fire</label>
+        </div>
+        <div>
+          <input type="radio" id="rock" name="category" value="rock" />
+          <label for="rock">Rock</label>
+        </div>
+        <div>
+          <input type="radio" id="ground" name="category" value="ground" />
+          <label for="ground">Ground</label>
+        </div>
+        <div>
+          <input type="radio" id="bug" name="category" value="bug" />
+          <label for="bug">Bug</label>
+        </div>
+        <div>
+          <input type="radio" id="grass" name="category" value="grass" />
+          <label for="grass">Grass</label>
+        </div>
+        <div>
+          <input type="radio" id="poison" name="category" value="poison" />
+          <label for="poison">Poison</label>
+        </div>
+        <div>
+          <input type="radio" id="electric" name="category" value="electric" />
+          <label for="electric">Electric</label>
+        </div>
+        <div>
+          <input type="radio" id="fairy" name="category" value="fairy" />
+          <label for="fairy">Fairy</label>
+        </div>
+        <div>
+          <input type="radio" id="fighting" name="category" value="fighting" />
+          <label for="fighting">Fighting</label>
+        </div>
+        <div>
+          <input type="radio" id="psychic" name="category" value="psychic" />
+          <label for="psychic">Psychic</label>
+        </div>
+        <div>
+          <input type="radio" id="dragon" name="category" value="dragon" />
+          <label for="dragon">Dragon</label>
+        </div>
+        <div>
+          <input type="radio" id="ice" name="category" value="ice" />
+          <label for="ice">Ice</label>
+        </div>
+        <div>
+          <input type="radio" id="ghost" name="category" value="ghost" />
+          <label for="ghost">Ghost</label>
+        </div>
+        <div>
+          <input type="radio" id="normal" name="category" value="normal" />
+          <label for="normal">Normal</label>
+        </div>
+        <div>
+          <input type="radio" id="all" name="category" value="normal" />
+          <label for="all">Show All</label>
+        </div>
       </section>
       <!-- This is where the array gets rendered to from the script.js, the renderArray function uses the informtion from the objectes in the array to create elements inside the div -->
       <section id="pokemon-list">

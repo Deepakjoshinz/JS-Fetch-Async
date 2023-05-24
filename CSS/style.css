@@ -84,8 +84,17 @@ body {
 
 #filters-and-search {
   display: grid;
-  grid-template-columns: 100%;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+  grid-template-areas: "search search search search search" "dropdown dropdown dropdown dropdown dropdown" "water fire rock ground bug" "grass poison electric fairy fighting" "psychic dragon ice ghost norm" "showall showall showall showall showall";
+}
+#filters-and-search label {
+  color: white;
+  font-size: 25px;
+}
+#filters-and-search #all {
+  grid-area: showall;
 }
 #filters-and-search #search {
   border-radius: 30px;
@@ -96,4 +105,53 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-family: "Rajdhani", sans-serif;
+  grid-area: search;
+}
+#filters-and-search #water {
+  grid-area: water;
+}
+#filters-and-search #fire {
+  grid-area: fire;
+}
+#filters-and-search #rock {
+  grid-area: rock;
+}
+#filters-and-search #ground {
+  grid-area: ground;
+}
+#filters-and-search #bug {
+  grid-area: bug;
+}
+#filters-and-search #grass {
+  grid-area: grass;
+}
+#filters-and-search #poison {
+  grid-area: poison;
+}
+#filters-and-search #electric {
+  grid-area: electric;
+}
+#filters-and-search #fairy {
+  grid-area: fairy;
+}
+#filters-and-search #fighting {
+  grid-area: fighting;
+}
+#filters-and-search #psychic {
+  grid-area: psychic;
+}
+#filters-and-search #dragon {
+  grid-area: dragon;
+}
+#filters-and-search #ice {
+  grid-area: ice;
+}
+#filters-and-search #ghost {
+  grid-area: ghost;
+}
+#filters-and-search #normal {
+  grid-area: norm;
+}
+#filters-and-search #filter {
+  grid-area: dropdown;
 }
