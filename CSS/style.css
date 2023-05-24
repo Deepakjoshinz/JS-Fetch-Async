@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --form-control-color: rgb(255, 255, 0);
+}
+
 html,
 body {
   background-image: url("../imgs/background.jpg");
@@ -92,8 +96,48 @@ body {
 #filters-and-search label {
   color: white;
   font-size: 25px;
+  cursor: pointer;
+  position: relative;
 }
-#filters-and-search #all {
+#filters-and-search label::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.443);
+  border-radius: 50%;
+  top: 50%;
+  left: -3rem;
+  transform: translateY(-50%);
+  transition: border-color 400ms ease;
+}
+#filters-and-search label::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.506);
+  border: 2px solid rgba(255, 255, 255, 0.443);
+  border-radius: 50%;
+  top: 50%;
+  left: -3rem;
+  transform: translateY(-50%) scale(0);
+  transition: transform 400ms ease;
+}
+#filters-and-search input[type=radio] {
+  display: none;
+}
+#filters-and-search input[type=radio]:checked + label::before {
+  border-color: var(--primary-color);
+}
+#filters-and-search input[type=radio]:checked + label::after {
+  transform: translateY(-50%) scale(0.55);
+}
+#filters-and-search .radio-item {
+  margin: 0.4rem 0;
+}
+#filters-and-search #show-all {
   grid-area: showall;
 }
 #filters-and-search #search {
@@ -105,53 +149,65 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-family: "Rajdhani", sans-serif;
+  background-color: rgba(0, 0, 0, 0.506);
+  color: white;
   grid-area: search;
 }
-#filters-and-search #water {
+#filters-and-search #show-water {
   grid-area: water;
 }
-#filters-and-search #fire {
+#filters-and-search #show-fire {
   grid-area: fire;
 }
-#filters-and-search #rock {
+#filters-and-search #show-rock {
   grid-area: rock;
 }
-#filters-and-search #ground {
+#filters-and-search #show-ground {
   grid-area: ground;
 }
-#filters-and-search #bug {
+#filters-and-search #show-bug {
   grid-area: bug;
 }
-#filters-and-search #grass {
+#filters-and-search #show-grass {
   grid-area: grass;
 }
-#filters-and-search #poison {
+#filters-and-search #show-poison {
   grid-area: poison;
 }
-#filters-and-search #electric {
+#filters-and-search #show-electric {
   grid-area: electric;
 }
-#filters-and-search #fairy {
+#filters-and-search #show-fairy {
   grid-area: fairy;
 }
-#filters-and-search #fighting {
+#filters-and-search #show-fighting {
   grid-area: fighting;
 }
-#filters-and-search #psychic {
+#filters-and-search #show-psychic {
   grid-area: psychic;
 }
-#filters-and-search #dragon {
+#filters-and-search #show-dragon {
   grid-area: dragon;
 }
-#filters-and-search #ice {
+#filters-and-search #show-ice {
   grid-area: ice;
 }
-#filters-and-search #ghost {
+#filters-and-search #show-ghost {
   grid-area: ghost;
 }
-#filters-and-search #normal {
+#filters-and-search #show-normal {
   grid-area: norm;
 }
 #filters-and-search #filter {
   grid-area: dropdown;
+  border-radius: 30px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.443);
+  padding: 10px 30px;
+  margin-top: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Rajdhani", sans-serif;
+  background-color: rgba(0, 0, 0, 0.506);
+  color: white;
 }

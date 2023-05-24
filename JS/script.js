@@ -1,6 +1,5 @@
 const filter = document.getElementById("filter");
 const search = document.getElementById("search");
-const resultHeading = document.getElementById("resultsHeading");
 const pageEffect = document.getElementById("page-effect");
 const list = document.getElementById("pokeList");
 const pokemonData = [];

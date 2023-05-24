@@ -1,3 +1,7 @@
+:root {
+  --form-control-color: rgb(255, 255, 0);
+}
+
 html,
 body {
   //Image used
@@ -15,6 +19,7 @@ body {
   //Define the font for the whole webpage
   font-family: $myFont;
 }
+
 #hero-section {
   display: grid;
   grid-template-columns: 100%;
@@ -81,8 +86,53 @@ body {
   label {
     color: $primary-font;
     font-size: $medium;
+    cursor: pointer;
+    position: relative;
   }
-  #all {
+  label::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.443);
+    border-radius: 50%;
+    top: 50%;
+    left: -3rem;
+    transform: translateY(-50%);
+    transition: border-color 400ms ease;
+  }
+
+  label::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.506);
+    border: 2px solid rgba(255, 255, 255, 0.443);
+    border-radius: 50%;
+    top: 50%;
+    left: -3rem;
+    transform: translateY(-50%) scale(0);
+    transition: transform 400ms ease;
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked + label::before {
+    border-color: var(--primary-color);
+  }
+
+  input[type="radio"]:checked + label::after {
+    transform: translateY(-50%) scale(0.55);
+  }
+
+  .radio-item {
+    margin: 0.4rem 0;
+  }
+
+  #show-all {
     grid-area: showall;
   }
   #search {
@@ -92,54 +142,64 @@ body {
     text-transform: uppercase;
     text-align: center;
     font-family: $myFont;
+    background-color: rgba(0, 0, 0, 0.506);
+    color: $primary-font;
     grid-area: search;
   }
-  #water {
+  #show-water {
     grid-area: water;
   }
-  #fire {
+  #show-fire {
     grid-area: fire;
   }
-  #rock {
+  #show-rock {
     grid-area: rock;
   }
-  #ground {
+  #show-ground {
     grid-area: ground;
   }
-  #bug {
+  #show-bug {
     grid-area: bug;
   }
-  #grass {
+  #show-grass {
     grid-area: grass;
   }
-  #poison {
+  #show-poison {
     grid-area: poison;
   }
-  #electric {
+  #show-electric {
     grid-area: electric;
   }
-  #fairy {
+  #show-fairy {
     grid-area: fairy;
   }
-  #fighting {
+  #show-fighting {
     grid-area: fighting;
   }
-  #psychic {
+  #show-psychic {
     grid-area: psychic;
   }
-  #dragon {
+  #show-dragon {
     grid-area: dragon;
   }
-  #ice {
+  #show-ice {
     grid-area: ice;
   }
-  #ghost {
+  #show-ghost {
     grid-area: ghost;
   }
-  #normal {
+  #show-normal {
     grid-area: norm;
   }
   #filter {
     grid-area: dropdown;
+    @include border-styles;
+    padding: 10px 30px;
+    margin-top: 8px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: $myFont;
+    background-color: rgba(0, 0, 0, 0.506);
+    color: $primary-font;
   }
 }

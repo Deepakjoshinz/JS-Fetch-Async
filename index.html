@@ -19,73 +19,79 @@
         <input id="search" type="search" placeholder="Search Pokemon" />
         <select name="filter" id="filter">
           <option value="" selected disabled hidden>
-            Select a Filter Option
+            Select a sort option
           </option>
           <option value="az">Alphabetical A to Z</option>
           <option value="za">Alphabetical Z to A</option>
         </select>
-        <div>
+        <div class="radio-item" id="show-water">
           <input type="radio" id="water" name="category" value="water" />
           <label for="water">Water</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-fire">
           <input type="radio" id="fire" name="category" value="fire" />
           <label for="fire">Fire</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-rock">
           <input type="radio" id="rock" name="category" value="rock" />
           <label for="rock">Rock</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-ground">
           <input type="radio" id="ground" name="category" value="ground" />
           <label for="ground">Ground</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-bug">
           <input type="radio" id="bug" name="category" value="bug" />
           <label for="bug">Bug</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-grass">
           <input type="radio" id="grass" name="category" value="grass" />
           <label for="grass">Grass</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-poison">
           <input type="radio" id="poison" name="category" value="poison" />
           <label for="poison">Poison</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-electric">
           <input type="radio" id="electric" name="category" value="electric" />
           <label for="electric">Electric</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-fairy">
           <input type="radio" id="fairy" name="category" value="fairy" />
           <label for="fairy">Fairy</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-fighting">
           <input type="radio" id="fighting" name="category" value="fighting" />
           <label for="fighting">Fighting</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-psychic">
           <input type="radio" id="psychic" name="category" value="psychic" />
           <label for="psychic">Psychic</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-dragon">
           <input type="radio" id="dragon" name="category" value="dragon" />
           <label for="dragon">Dragon</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-ice">
           <input type="radio" id="ice" name="category" value="ice" />
           <label for="ice">Ice</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-ghost">
           <input type="radio" id="ghost" name="category" value="ghost" />
           <label for="ghost">Ghost</label>
         </div>
-        <div>
+        <div class="radio-item" id="show-normal">
           <input type="radio" id="normal" name="category" value="normal" />
           <label for="normal">Normal</label>
         </div>
-        <div>
-          <input type="radio" id="all" name="category" value="normal" />
+        <div class="radio-item" id="show-all">
+          <input
+            type="radio"
+            id="all"
+            name="category"
+            value="normal"
+            checked="checked"
+          />
           <label for="all">Show All</label>
         </div>
       </section>
