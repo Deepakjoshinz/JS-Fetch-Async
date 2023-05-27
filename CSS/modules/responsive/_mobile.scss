@@ -83,58 +83,25 @@ body {
     "psychic dragon ice ghost norm"
     "showall showall showall showall showall";
 
-  label {
+  input[type="button"] {
+    @include border-styles;
+    display: block;
+    text-transform: capitalize;
+    font-family: $myFont;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.506);
     color: $primary-font;
     font-size: $medium;
-    cursor: pointer;
-    position: relative;
+    padding: 10px 40px;
   }
-  label::before {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.443);
-    border-radius: 50%;
-    top: 50%;
-    left: -3rem;
-    transform: translateY(-50%);
-    transition: border-color 400ms ease;
+  input[type="button"]:hover {
+    background: rgba(255, 255, 255, 0.506);
+    color: $secondary-font;
   }
-
-  label::after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.506);
-    border: 2px solid rgba(255, 255, 255, 0.443);
-    border-radius: 50%;
-    top: 50%;
-    left: -3rem;
-    transform: translateY(-50%) scale(0);
-    transition: transform 400ms ease;
-  }
-
-  input[type="radio"] {
-    display: none;
-  }
-  input[type="radio"]:checked + label::before {
-    border-color: var(--primary-color);
-  }
-
-  input[type="radio"]:checked + label::after {
-    transform: translateY(-50%) scale(0.55);
-  }
-
-  .radio-item {
+  .button-item {
     margin: 0.4rem 0;
   }
 
-  #show-all {
-    grid-area: showall;
-  }
   #search {
     @include border-styles;
     padding: 10px 40px;
@@ -190,6 +157,9 @@ body {
   }
   #show-normal {
     grid-area: norm;
+  }
+  #show-all {
+    grid-area: showall;
   }
   #filter {
     grid-area: dropdown;

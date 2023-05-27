@@ -2,6 +2,8 @@
 @import "modules/_variables.scss";
 @import "modules/_typography.scss";
 @import "modules/mixins";
+
 @import "modules/responsive/_mobile.scss";
 @import "modules/responsive/_tablet.scss";
 @import "modules/responsive/_desktop.scss";
+@import "modules/classes";

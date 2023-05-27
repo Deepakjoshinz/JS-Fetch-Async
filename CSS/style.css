@@ -125,16 +125,16 @@ body {
   transform: translateY(-50%) scale(0);
   transition: transform 400ms ease;
 }
-#filters-and-search input[type=radio] {
+#filters-and-search input[type="button"] {
   display: none;
 }
-#filters-and-search input[type=radio]:checked + label::before {
+#filters-and-search input[type="button"]:checked + label::before {
   border-color: var(--primary-color);
 }
-#filters-and-search input[type=radio]:checked + label::after {
+#filters-and-search input[type="button"]:checked + label::after {
   transform: translateY(-50%) scale(0.55);
 }
-#filters-and-search .radio-item {
+#filters-and-search .button-item {
   margin: 0.4rem 0;
 }
 #filters-and-search #show-all {

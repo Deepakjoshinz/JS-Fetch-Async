@@ -24,75 +24,58 @@
           <option value="az">Alphabetical A to Z</option>
           <option value="za">Alphabetical Z to A</option>
         </select>
-        <div class="radio-item" id="show-water">
-          <input type="radio" id="water" name="category" value="water" />
-          <label for="water">Water</label>
+        <div class="button-item" id="show-water">
+          <input type="button" id="water" name="category" value="water" />
         </div>
-        <div class="radio-item" id="show-fire">
-          <input type="radio" id="fire" name="category" value="fire" />
-          <label for="fire">Fire</label>
+        <div class="button-item" id="show-fire">
+          <input type="button" id="fire" name="category" value="fire" />
         </div>
-        <div class="radio-item" id="show-rock">
-          <input type="radio" id="rock" name="category" value="rock" />
-          <label for="rock">Rock</label>
+        <div class="button-item" id="show-rock">
+          <input type="button" id="rock" name="category" value="rock" />
         </div>
-        <div class="radio-item" id="show-ground">
-          <input type="radio" id="ground" name="category" value="ground" />
-          <label for="ground">Ground</label>
+        <div class="button-item" id="show-ground">
+          <input type="button" id="ground" name="category" value="ground" />
         </div>
-        <div class="radio-item" id="show-bug">
-          <input type="radio" id="bug" name="category" value="bug" />
-          <label for="bug">Bug</label>
+        <div class="button-item" id="show-bug">
+          <input type="button" id="bug" name="category" value="bug" />
         </div>
-        <div class="radio-item" id="show-grass">
-          <input type="radio" id="grass" name="category" value="grass" />
-          <label for="grass">Grass</label>
+        <div class="button-item" id="show-grass">
+          <input type="button" id="grass" name="category" value="grass" />
         </div>
-        <div class="radio-item" id="show-poison">
-          <input type="radio" id="poison" name="category" value="poison" />
-          <label for="poison">Poison</label>
+        <div class="button-item" id="show-poison">
+          <input type="button" id="poison" name="category" value="poison" />
         </div>
-        <div class="radio-item" id="show-electric">
-          <input type="radio" id="electric" name="category" value="electric" />
-          <label for="electric">Electric</label>
+        <div class="button-item" id="show-electric">
+          <input type="button" id="electric" name="category" value="electric" />
         </div>
-        <div class="radio-item" id="show-fairy">
-          <input type="radio" id="fairy" name="category" value="fairy" />
-          <label for="fairy">Fairy</label>
+        <div class="button-item" id="show-fairy">
+          <input type="button" id="fairy" name="category" value="fairy" />
         </div>
-        <div class="radio-item" id="show-fighting">
-          <input type="radio" id="fighting" name="category" value="fighting" />
-          <label for="fighting">Fighting</label>
+        <div class="button-item" id="show-fighting">
+          <input type="button" id="fighting" name="category" value="fighting" />
         </div>
-        <div class="radio-item" id="show-psychic">
-          <input type="radio" id="psychic" name="category" value="psychic" />
-          <label for="psychic">Psychic</label>
+        <div class="button-item" id="show-psychic">
+          <input type="button" id="psychic" name="category" value="psychic" />
         </div>
-        <div class="radio-item" id="show-dragon">
-          <input type="radio" id="dragon" name="category" value="dragon" />
-          <label for="dragon">Dragon</label>
+        <div class="button-item" id="show-dragon">
+          <input type="button" id="dragon" name="category" value="dragon" />
         </div>
-        <div class="radio-item" id="show-ice">
-          <input type="radio" id="ice" name="category" value="ice" />
-          <label for="ice">Ice</label>
+        <div class="button-item" id="show-ice">
+          <input type="button" id="ice" name="category" value="ice" />
         </div>
-        <div class="radio-item" id="show-ghost">
-          <input type="radio" id="ghost" name="category" value="ghost" />
-          <label for="ghost">Ghost</label>
+        <div class="button-item" id="show-ghost">
+          <input type="button" id="ghost" name="category" value="ghost" />
         </div>
-        <div class="radio-item" id="show-normal">
-          <input type="radio" id="normal" name="category" value="normal" />
-          <label for="normal">Normal</label>
+        <div class="button-item" id="show-normal">
+          <input type="button" id="normal" name="category" value="normal" />
         </div>
-        <div class="radio-item" id="show-all">
+        <div class="button-item" id="show-all">
           <input
-            type="radio"
+            type="button"
             id="all"
             name="category"
-            value="normal"
-            checked="checked"
-          />
-          <label for="all">Show All</label>
+            value="Show All"
+            class="active" />
         </div>
       </section>
       <!-- This is where the array gets rendered to from the script.js, the renderArray function uses the informtion from the objectes in the array to create elements inside the div -->
@@ -100,6 +83,7 @@
         <div id="pokeList"></div>
       </section>
     </container>
+
     <!-- This links back to the script.js -->
     <script src="JS/script.js"></script>
   </body>

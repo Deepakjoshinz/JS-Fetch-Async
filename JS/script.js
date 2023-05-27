@@ -59,56 +59,71 @@ function renderArray(pokemonData) {
     pageEffect.classList.remove("glassmorphisim");
     pageEffect.classList.add("glassmorphisim");
 
-    colorCatergories(obj, typeOne);
+    colorCatergories(obj, typeOne, div);
   }
 }
 
-function colorCatergories(obj, typeOne) {
+function colorCatergories(obj, typeOne, div) {
   if (obj.types[0].type.name == "grass") {
-    typeOne.style.background = "rgb(104, 193, 63)";
-    console.log("grass");
+    typeOne.style.background = "rgb(104, 193, 62";
+    div.classList.add("grass");
+    // console.log("grass");
   } else if (obj.types[0].type.name == "fire") {
     typeOne.style.background = "rgb(234, 107, 37)";
-    console.log("fire");
+    div.classList.add("fire");
+    // console.log("fire");
   } else if (obj.types[0].type.name == "bug") {
     typeOne.style.background = "rgb(153, 173, 25)";
-    console.log("bug");
+    div.classList.add("bug");
+    // console.log("bug");
   } else if (obj.types[0].type.name == "water") {
     typeOne.style.background = "rgb(86, 121, 236)";
-    console.log("water");
+    div.classList.add("water");
+    // console.log("water");
   } else if (obj.types[0].type.name == "poison") {
     typeOne.style.background = "rgb(140, 39, 142)";
-    console.log("poison");
+    div.classList.add("poison");
+    // console.log("poison");
   } else if (obj.types[0].type.name == "electric") {
     typeOne.style.background = "rgb(246, 200, 38)";
-    console.log("electric");
+    div.classList.add("electric");
+    // console.log("electric");
   } else if (obj.types[0].type.name == "ground") {
     typeOne.style.background = "rgb(216, 180, 86)";
-    console.log("ground");
+    div.classList.add("ground");
+    // console.log("ground");
   } else if (obj.types[0].type.name == "fairy") {
     typeOne.style.background = "rgb(231, 132, 156)";
-    console.log("fairy");
+    div.classList.add("fairy");
+    // console.log("fairy");
   } else if (obj.types[0].type.name == "fighting") {
     typeOne.style.background = "rgb(176, 30, 31)";
-    console.log("fighting");
+    div.classList.add("fighting");
+    // console.log("fighting");
   } else if (obj.types[0].type.name == "psychic") {
     typeOne.style.background = "rgb(244, 61, 117)";
-    console.log("psychic");
+    div.classList.add("psychic");
+    // console.log("psychic");
   } else if (obj.types[0].type.name == "rock") {
     typeOne.style.background = "rgb(168, 145, 44)";
-    console.log("rock");
+    div.classList.add("rock");
+    // console.log("rock");
   } else if (obj.types[0].type.name == "ghost") {
     typeOne.style.background = "rgb(92, 66, 134)";
-    console.log("ghost");
+    div.classList.add("ghost");
+    // console.log("ghost");
   } else if (obj.types[0].type.name == "ice") {
     typeOne.style.background = "rgb(137, 208, 207)";
-    console.log("ice");
+    div.classList.add("ice");
+    // console.log("ice");
   } else if (obj.types[0].type.name == "dragon") {
     typeOne.style.background = "rgb(91, 16, 246)";
-    console.log("dragon");
+    div.classList.add("dragon");
+    // console.log("dragon");
   } else {
     typeOne.style.background = "rgb(151, 144, 101)";
-    console.log("normal");
+    div.classList.add("normal");
+    // console.log("normal");
   }
 }
 // Define sort functions
