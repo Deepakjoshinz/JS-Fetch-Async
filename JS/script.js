@@ -43,6 +43,7 @@ function renderArray(pokemonData) {
     const p = document.createElement("p");
 
     div.classList.add("glassmorphisim-box");
+    div.classList.add("filter-div");
 
     img.src = obj.sprites.front_default;
     img.alt = obj.name;
@@ -55,9 +56,6 @@ function renderArray(pokemonData) {
     div.appendChild(p);
     div.appendChild(typeOne);
     list.appendChild(div);
-
-    pageEffect.classList.remove("glassmorphisim");
-    pageEffect.classList.add("glassmorphisim");
 
     colorCatergories(obj, typeOne, div);
   }
@@ -162,4 +160,41 @@ function searchPokemon(query) {
 search.addEventListener("input", () => {
   const query = search.value.trim();
   searchPokemon(query);
+});
+
+function filterSelection(category) {
+  const divs = document.getElementsByClassName("filter-div");
+  if (category === "") {
+    for (let i = 0; i < divs.length; i++) {
+      divs[i].style.display = "grid";
+    }
+  } else {
+    for (let i = 0; i < divs.length; i++) {
+      if (divs[i].classList.contains(category)) {
+        divs[i].style.display = "grid";
+      } else {
+        divs[i].style.display = "none";
+      }
+    }
+  }
+}
+
+//event listeners for the filter buttons
+const btnContainer = document.getElementById("button-container");
+const btns = btnContainer.getElementsByClassName("btn");
+
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    const current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+
+    const category = this.value;
+    filterSelection(category);
+  });
+}
+// Add event listener to the "Show All" button
+const showAllBtn = document.getElementById("all");
+showAllBtn.addEventListener("click", function () {
+  renderArray(pokemonData);
 });

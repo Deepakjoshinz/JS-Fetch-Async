@@ -8,13 +8,10 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- This creates a external container that has a glassmorphism and parralax effect for the content to sit in -->
-    <container id="page-effect">
-      <!-- This is the hero section of the one page site, includes the banner and more informaiton -->
+    <section id="page-effect" class="glassmorphisim">
       <section id="hero-section">
         <img id="banner" src="imgs/banner-pokemon.png" />
       </section>
-      <!-- This is the search and filters container, all of the serach and filter information is kept here -->
       <section id="filters-and-search">
         <input id="search" type="search" placeholder="Search Pokemon" />
         <select name="filter" id="filter">
@@ -24,67 +21,143 @@
           <option value="az">Alphabetical A to Z</option>
           <option value="za">Alphabetical Z to A</option>
         </select>
-        <div class="button-item" id="show-water">
-          <input type="button" id="water" name="category" value="water" />
-        </div>
-        <div class="button-item" id="show-fire">
-          <input type="button" id="fire" name="category" value="fire" />
-        </div>
-        <div class="button-item" id="show-rock">
-          <input type="button" id="rock" name="category" value="rock" />
-        </div>
-        <div class="button-item" id="show-ground">
-          <input type="button" id="ground" name="category" value="ground" />
-        </div>
-        <div class="button-item" id="show-bug">
-          <input type="button" id="bug" name="category" value="bug" />
-        </div>
-        <div class="button-item" id="show-grass">
-          <input type="button" id="grass" name="category" value="grass" />
-        </div>
-        <div class="button-item" id="show-poison">
-          <input type="button" id="poison" name="category" value="poison" />
-        </div>
-        <div class="button-item" id="show-electric">
-          <input type="button" id="electric" name="category" value="electric" />
-        </div>
-        <div class="button-item" id="show-fairy">
-          <input type="button" id="fairy" name="category" value="fairy" />
-        </div>
-        <div class="button-item" id="show-fighting">
-          <input type="button" id="fighting" name="category" value="fighting" />
-        </div>
-        <div class="button-item" id="show-psychic">
-          <input type="button" id="psychic" name="category" value="psychic" />
-        </div>
-        <div class="button-item" id="show-dragon">
-          <input type="button" id="dragon" name="category" value="dragon" />
-        </div>
-        <div class="button-item" id="show-ice">
-          <input type="button" id="ice" name="category" value="ice" />
-        </div>
-        <div class="button-item" id="show-ghost">
-          <input type="button" id="ghost" name="category" value="ghost" />
-        </div>
-        <div class="button-item" id="show-normal">
-          <input type="button" id="normal" name="category" value="normal" />
-        </div>
-        <div class="button-item" id="show-all">
-          <input
-            type="button"
-            id="all"
-            name="category"
-            value="Show All"
-            class="active" />
-        </div>
+        <h2 id="filter-label">Select a Filter Option:</h2>
+        <container id="button-container">
+          <div class="button-item">
+            <input
+              type="button"
+              id="water"
+              name="category"
+              value="water"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="fire"
+              name="category"
+              value="fire"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="rock"
+              name="category"
+              value="rock"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="ground"
+              name="category"
+              value="ground"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="bug"
+              name="category"
+              value="bug"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="grass"
+              name="category"
+              value="grass"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="poison"
+              name="category"
+              value="poison"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="electric"
+              name="category"
+              value="electric"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="fairy"
+              name="category"
+              value="fairy"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="fighting"
+              name="category"
+              value="fighting"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="psychic"
+              name="category"
+              value="psychic"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="dragon"
+              name="category"
+              value="dragon"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="ice"
+              name="category"
+              value="ice"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="ghost"
+              name="category"
+              value="ghost"
+              class="btn" />
+          </div>
+          <div class="button-item">
+            <input
+              type="button"
+              id="normal"
+              name="category"
+              value="normal"
+              class="btn" />
+          </div>
+          <div id="show-all" class="button-item">
+            <input
+              type="button"
+              id="all"
+              name="category"
+              value="Show All"
+              class="btn active" />
+          </div>
+        </container>
       </section>
-      <!-- This is where the array gets rendered to from the script.js, the renderArray function uses the informtion from the objectes in the array to create elements inside the div -->
       <section id="pokemon-list">
         <div id="pokeList"></div>
       </section>
-    </container>
+    </section>
 
-    <!-- This links back to the script.js -->
     <script src="JS/script.js"></script>
   </body>
 </html>

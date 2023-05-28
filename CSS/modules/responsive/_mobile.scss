@@ -78,11 +78,8 @@ body {
   grid-template-areas:
     "search search search search search"
     "dropdown dropdown dropdown dropdown dropdown"
-    "water fire rock ground bug"
-    "grass poison electric fairy fighting"
-    "psychic dragon ice ghost norm"
-    "showall showall showall showall showall";
-
+    "filter-heading filter-heading filter-heading filter-heading filter-heading"
+    "container container container container container";
   input[type="button"] {
     @include border-styles;
     display: block;
@@ -112,6 +109,10 @@ body {
     background-color: rgba(0, 0, 0, 0.506);
     color: $primary-font;
     grid-area: search;
+  }
+  #filter-label {
+    grid-area: filter-heading;
+    color: $primary-font;
   }
   #show-water {
     grid-area: water;
@@ -171,5 +172,22 @@ body {
     font-family: $myFont;
     background-color: rgba(0, 0, 0, 0.506);
     color: $primary-font;
+  }
+  #button-container {
+    width: 100vw;
+    grid-area: container;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "water fire rock ground bug"
+      "grass poison electric fairy fighting"
+      "psychic dragon ice ghost norm"
+      "showall showall showall showall showall";
+    justify-items: center;
+    gap: 20px;
+  }
+  .active {
+    background: rgba(255, 255, 255, 0.506) !important;
+    color: $secondary-font !important;
   }
 }
