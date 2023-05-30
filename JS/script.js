@@ -42,27 +42,57 @@ function renderArray(pokemonData) {
     const typeOne = document.createElement("a");
     const p = document.createElement("p");
     const slideOne = document.createElement("div");
-    const slideTwo = document.createElement("div");
+    const wrapper = document.createElement("div");
+    slideOne.classList.add("slideOne", "swiper-slide");
 
-    div.classList.add("glassmorphisim-box");
-    div.classList.add("filter-div");
-
-    slideOne.classList.add("slideOne");
     img.src = obj.sprites.front_default;
     img.alt = obj.name;
-
     p.textContent = `${obj.name}`;
-
     typeOne.textContent = `${obj.types[0].type.name}`;
-
+    const slideTwo = document.createElement("div");
+    slideTwo.classList.add("slideTwo", "swiper-slide");
+    const statsHeading = document.createElement("h3");
+    const health = document.createElement("span");
+    const attack = document.createElement("span");
+    const defense = document.createElement("span");
+    statsHeading.classList.add("stats-heading");
+    health.classList.add("health");
+    attack.classList.add("attack");
+    defense.classList.add("defense");
+    defense.textContent = `${obj.stats[2].stat.name}: ${obj.stats[2].base_stat} `;
+    attack.textContent = `${obj.stats[1].stat.name}: ${obj.stats[1].base_stat} `;
+    health.textContent = `Health: ${obj.stats[0].base_stat}`;
+    statsHeading.textContent = `Stats`;
+    div.classList.add("glassmorphisim-box", "filter-div", "swiper-container");
+    wrapper.classList.add("swiper-wrapper");
+    slideTwo.appendChild(statsHeading);
+    slideTwo.appendChild(health);
+    slideTwo.appendChild(attack);
+    slideTwo.appendChild(defense);
     slideOne.appendChild(img);
     slideOne.appendChild(p);
     slideOne.appendChild(typeOne);
-    div.appendChild(slideOne);
+
+    wrapper.appendChild(slideOne);
+    wrapper.appendChild(slideTwo);
+    div.appendChild(wrapper);
     list.appendChild(div);
 
     colorCatergories(obj, typeOne, div);
   }
+
+  // Initialize the Swiper instance
+  new Swiper(".swiper-container", {
+    slidesPerView: 1,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 }
 
 function colorCatergories(obj, typeOne, div) {

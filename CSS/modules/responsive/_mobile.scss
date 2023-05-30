@@ -199,3 +199,22 @@ body {
     "category";
   justify-items: center;
 }
+.slideTwo {
+  grid-template-columns: 1fr;
+  display: grid;
+  justify-items: center;
+  grid-template-areas:
+    "statsHeading"
+    "health"
+    "attack"
+    "defense";
+}
+
+.swiper-wrapper {
+  display: grid;
+  overflow: hidden; /* Hide the overflow of the wrapper */
+  width: 100%; /* Adjust the width as needed */
+}
+.swiper-wrapper .swiper-slide {
+  width: 100%; /* Make each slide take up the full width */
+}

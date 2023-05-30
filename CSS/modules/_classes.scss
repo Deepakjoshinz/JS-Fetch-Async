@@ -60,3 +60,19 @@
 .show {
   display: grid !important;
 }
+
+.health {
+  grid-area: health;
+}
+
+.attack {
+  grid-area: attack;
+}
+
+.defense {
+  grid-area: defense;
+}
+
+.stats-heading {
+  grid-area: statsHeading;
+}
