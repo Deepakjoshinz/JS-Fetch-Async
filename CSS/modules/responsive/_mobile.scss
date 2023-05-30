@@ -191,3 +191,11 @@ body {
     color: $secondary-font !important;
   }
 }
+.slideOne {
+  display: grid;
+  grid-template-areas:
+    "img"
+    "pokemonName"
+    "category";
+  justify-items: center;
+}

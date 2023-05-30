@@ -91,54 +91,27 @@ body {
   gap: 20px;
   grid-template-columns: repeat(5, 1fr);
   justify-items: center;
-  grid-template-areas: "search search search search search" "dropdown dropdown dropdown dropdown dropdown" "water fire rock ground bug" "grass poison electric fairy fighting" "psychic dragon ice ghost norm" "showall showall showall showall showall";
+  grid-template-areas: "search search search search search" "dropdown dropdown dropdown dropdown dropdown" "filter-heading filter-heading filter-heading filter-heading filter-heading" "container container container container container";
 }
-#filters-and-search label {
+#filters-and-search input[type=button] {
+  border-radius: 30px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.443);
+  display: block;
+  text-transform: capitalize;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.506);
   color: white;
   font-size: 25px;
-  cursor: pointer;
-  position: relative;
+  padding: 10px 40px;
 }
-#filters-and-search label::before {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.443);
-  border-radius: 50%;
-  top: 50%;
-  left: -3rem;
-  transform: translateY(-50%);
-  transition: border-color 400ms ease;
-}
-#filters-and-search label::after {
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  background-color: rgba(0, 0, 0, 0.506);
-  border: 2px solid rgba(255, 255, 255, 0.443);
-  border-radius: 50%;
-  top: 50%;
-  left: -3rem;
-  transform: translateY(-50%) scale(0);
-  transition: transform 400ms ease;
-}
-#filters-and-search input[type="button"] {
-  display: none;
-}
-#filters-and-search input[type="button"]:checked + label::before {
-  border-color: var(--primary-color);
-}
-#filters-and-search input[type="button"]:checked + label::after {
-  transform: translateY(-50%) scale(0.55);
+#filters-and-search input[type=button]:hover {
+  background: rgba(255, 255, 255, 0.506);
+  color: rgb(0, 0, 0);
 }
 #filters-and-search .button-item {
   margin: 0.4rem 0;
-}
-#filters-and-search #show-all {
-  grid-area: showall;
 }
 #filters-and-search #search {
   border-radius: 30px;
@@ -152,6 +125,10 @@ body {
   background-color: rgba(0, 0, 0, 0.506);
   color: white;
   grid-area: search;
+}
+#filters-and-search #filter-label {
+  grid-area: filter-heading;
+  color: white;
 }
 #filters-and-search #show-water {
   grid-area: water;
@@ -198,6 +175,9 @@ body {
 #filters-and-search #show-normal {
   grid-area: norm;
 }
+#filters-and-search #show-all {
+  grid-area: showall;
+}
 #filters-and-search #filter {
   grid-area: dropdown;
   border-radius: 30px;
@@ -210,4 +190,87 @@ body {
   font-family: "Rajdhani", sans-serif;
   background-color: rgba(0, 0, 0, 0.506);
   color: white;
+}
+#filters-and-search #button-container {
+  width: 100vw;
+  grid-area: container;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "water fire rock ground bug" "grass poison electric fairy fighting" "psychic dragon ice ghost norm" "showall showall showall showall showall";
+  justify-items: center;
+  gap: 20px;
+}
+#filters-and-search .active {
+  background: rgba(255, 255, 255, 0.506) !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.slideOne {
+  display: grid;
+  grid-template-areas: "img" "pokemonName" "category";
+  justify-items: center;
+}
+
+.grass {
+  background: rgba(104, 193, 62, 0.5);
+}
+
+.fire {
+  background: rgba(234, 107, 37, 0.5);
+}
+
+.bug {
+  background: rgba(153, 173, 25, 0.5);
+}
+
+.water {
+  background: rgba(86, 121, 236, 0.5);
+}
+
+.poison {
+  background: rgba(140, 39, 142, 0.5);
+}
+
+.electric {
+  background: rgba(246, 200, 38, 0.5);
+}
+
+.ground {
+  background: rgba(216, 180, 86, 0.5);
+}
+
+.fairy {
+  background: rgba(231, 132, 156, 0.5);
+}
+
+.fighting {
+  background: rgba(176, 30, 31, 0.5);
+}
+
+.psychic {
+  background: rgba(244, 61, 117, 0.5);
+}
+
+.rock {
+  background: rgba(168, 145, 44, 0.5);
+}
+
+.ghost {
+  background: rgba(92, 66, 134, 0.5);
+}
+
+.ice {
+  background: rgba(137, 208, 207, 0.5);
+}
+
+.dragon {
+  background: rgba(91, 16, 246, 0.5);
+}
+
+.normal {
+  background: rgba(151, 144, 101, 0.5);
+}
+
+.show {
+  display: grid !important;
 }

@@ -41,10 +41,13 @@ function renderArray(pokemonData) {
     const img = document.createElement("img");
     const typeOne = document.createElement("a");
     const p = document.createElement("p");
+    const slideOne = document.createElement("div");
+    const slideTwo = document.createElement("div");
 
     div.classList.add("glassmorphisim-box");
     div.classList.add("filter-div");
 
+    slideOne.classList.add("slideOne");
     img.src = obj.sprites.front_default;
     img.alt = obj.name;
 
@@ -52,9 +55,10 @@ function renderArray(pokemonData) {
 
     typeOne.textContent = `${obj.types[0].type.name}`;
 
-    div.appendChild(img);
-    div.appendChild(p);
-    div.appendChild(typeOne);
+    slideOne.appendChild(img);
+    slideOne.appendChild(p);
+    slideOne.appendChild(typeOne);
+    div.appendChild(slideOne);
     list.appendChild(div);
 
     colorCatergories(obj, typeOne, div);
