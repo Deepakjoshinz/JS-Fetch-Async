@@ -198,6 +198,7 @@ body {
     "pokemonName"
     "category";
   justify-items: center;
+  align-items: center;
 }
 .slideTwo {
   grid-template-columns: 1fr;
@@ -211,7 +212,7 @@ body {
 }
 
 .swiper-wrapper {
-  display: grid;
+  display: flex;
   overflow: hidden; /* Hide the overflow of the wrapper */
   width: 100%; /* Adjust the width as needed */
 }

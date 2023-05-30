@@ -41,20 +41,15 @@ function renderArray(pokemonData) {
     const img = document.createElement("img");
     const typeOne = document.createElement("a");
     const p = document.createElement("p");
-    const slideOne = document.createElement("div");
-    const wrapper = document.createElement("div");
-    slideOne.classList.add("slideOne", "swiper-slide");
-
-    img.src = obj.sprites.front_default;
-    img.alt = obj.name;
-    p.textContent = `${obj.name}`;
-    typeOne.textContent = `${obj.types[0].type.name}`;
-    const slideTwo = document.createElement("div");
-    slideTwo.classList.add("slideTwo", "swiper-slide");
+    const button = document.createElement("button");
+    const statsModal = document.createElement("div");
     const statsHeading = document.createElement("h3");
     const health = document.createElement("span");
     const attack = document.createElement("span");
     const defense = document.createElement("span");
+    statsModal.classList.add("stats-modal");
+    button.classList.add("stats-button");
+    button.textContent = "View Stats";
     statsHeading.classList.add("stats-heading");
     health.classList.add("health");
     attack.classList.add("attack");
@@ -63,39 +58,73 @@ function renderArray(pokemonData) {
     attack.textContent = `${obj.stats[1].stat.name}: ${obj.stats[1].base_stat} `;
     health.textContent = `Health: ${obj.stats[0].base_stat}`;
     statsHeading.textContent = `Stats`;
-    div.classList.add("glassmorphisim-box", "filter-div", "swiper-container");
-    wrapper.classList.add("swiper-wrapper");
-    slideTwo.appendChild(statsHeading);
-    slideTwo.appendChild(health);
-    slideTwo.appendChild(attack);
-    slideTwo.appendChild(defense);
-    slideOne.appendChild(img);
-    slideOne.appendChild(p);
-    slideOne.appendChild(typeOne);
 
-    wrapper.appendChild(slideOne);
-    wrapper.appendChild(slideTwo);
-    div.appendChild(wrapper);
+    img.src = obj.sprites.front_default;
+    img.alt = obj.name;
+    p.textContent = `${obj.name}`;
+    typeOne.textContent = `${obj.types[0].type.name}`;
+
+    div.classList.add("glassmorphisim-box", "filter-div");
+    div.appendChild(img);
+    div.appendChild(p);
+    div.appendChild(typeOne);
+    div.appendChild(button);
+
+    button.addEventListener("click", () => {
+      showStatsModal(obj);
+    });
+
+    colorCategories(obj, typeOne, div);
+
     list.appendChild(div);
-
-    colorCatergories(obj, typeOne, div);
   }
+}
+function showStatsModal(pokemon) {
+  const modal = document.createElement("div");
+  const modalContent = document.createElement("div");
+  const closeBtn = document.createElement("span");
+  const statsHeading = document.createElement("h3");
+  const health = document.createElement("span");
+  const attack = document.createElement("span");
+  const defense = document.createElement("span");
+  const modalOverlay = document.createElement("div");
 
-  // Initialize the Swiper instance
-  new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+  modal.classList.add("modal");
+  modalContent.classList.add("modal-content");
+  closeBtn.classList.add("close-button");
+  statsHeading.classList.add("stats-heading");
+  health.classList.add("health");
+  attack.classList.add("attack");
+  defense.classList.add("defense");
+  modalOverlay.classList.add("modal-overlay");
+
+  health.textContent = `Health: ${pokemon.stats[0].base_stat}`;
+  attack.textContent = `${pokemon.stats[1].stat.name}: ${pokemon.stats[1].base_stat}`;
+  defense.textContent = `${pokemon.stats[2].stat.name}: ${pokemon.stats[2].base_stat}`;
+  statsHeading.textContent = "Stats";
+  closeBtn.innerHTML = "&times;";
+
+  modalContent.appendChild(closeBtn);
+  modalContent.appendChild(statsHeading);
+  modalContent.appendChild(health);
+  modalContent.appendChild(attack);
+  modalContent.appendChild(defense);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+  document.body.appendChild(modalOverlay);
+
+  closeBtn.addEventListener("click", () => {
+    modal.remove();
+    modalOverlay.remove();
+  });
+
+  modalOverlay.addEventListener("click", () => {
+    modal.remove();
+    modalOverlay.remove();
   });
 }
 
-function colorCatergories(obj, typeOne, div) {
+function colorCategories(obj, typeOne, div) {
   if (obj.types[0].type.name == "grass") {
     typeOne.style.background = "rgb(104, 193, 62";
     div.classList.add("grass");
