@@ -63,16 +63,20 @@
 
 .health {
   grid-area: health;
+  font-size: $medium;
 }
 
 .attack {
   grid-area: attack;
+  font-size: $medium;
 }
 
 .defense {
   grid-area: defense;
+  font-size: $medium;
 }
 
 .stats-heading {
   grid-area: statsHeading;
+  font-size: $large;
 }

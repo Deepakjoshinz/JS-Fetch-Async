@@ -67,6 +67,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
   gap: 15px;
+  font-family: $myFont;
   padding: 30px 50px;
 }
 
@@ -191,31 +192,50 @@ body {
     color: $secondary-font !important;
   }
 }
-.slideOne {
-  display: grid;
-  grid-template-areas:
-    "img"
-    "pokemonName"
-    "category";
-  justify-items: center;
-  align-items: center;
+
+.stats-button {
+  @include border-styles;
+  background: rgba(0, 0, 0, 0.506);
+  color: $primary-font;
+  margin: 0.5rem 0;
+  padding: 5px 15px;
+  font-family: $myFont;
+  text-transform: uppercase;
 }
-.slideTwo {
-  grid-template-columns: 1fr;
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr;
   grid-template-areas:
+    "close"
     "statsHeading"
     "health"
     "attack"
     "defense";
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  box-shadow: 0px 0px 10px #cccccc;
+  justify-items: center;
+  text-transform: capitalize;
 }
 
-.swiper-wrapper {
-  display: flex;
-  overflow: hidden; /* Hide the overflow of the wrapper */
-  width: 100%; /* Adjust the width as needed */
-}
-.swiper-wrapper .swiper-slide {
-  width: 100%; /* Make each slide take up the full width */
+.close-button {
+  font-size: 80px;
+  grid-area: close;
+  margin: -20px;
+  margin-bottom: -50px;
 }

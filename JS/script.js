@@ -88,6 +88,10 @@ function showStatsModal(pokemon) {
   const attack = document.createElement("span");
   const defense = document.createElement("span");
   const modalOverlay = document.createElement("div");
+  const pokemonName = document.createElement("h2");
+
+  pokemonName.classList.add("Pokemon-Name");
+  pokemonName.textContent = `${pokemon.name}`;
 
   modal.classList.add("modal");
   modalContent.classList.add("modal-content");
@@ -106,6 +110,7 @@ function showStatsModal(pokemon) {
 
   modalContent.appendChild(closeBtn);
   modalContent.appendChild(statsHeading);
+  modalContent.appendChild(pokemonName);
   modalContent.appendChild(health);
   modalContent.appendChild(attack);
   modalContent.appendChild(defense);
